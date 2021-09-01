@@ -90,7 +90,8 @@ class EKSClusterStack(core.Stack):
             # This means that we'll have to ssh to a jumpbox/bastion or set up a VPN to manage it
             endpoint_access=eks.EndpointAccess.PRIVATE,
             version=eks.KubernetesVersion.of(self.node.try_get_context("eks_version")),
-            default_capacity=0
+            default_capacity=0,
+            
         )
         # Output the EKS Cluster Name and Export it
         core.CfnOutput(
